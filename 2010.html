@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>21點遊戲</title>
+  <style>
+    /* CSS 樣式 */
+    /* 在這裡自定義你的遊戲樣式 */
+  </style>
+</head>
+<body>
+  <h1>21點遊戲</h1>
+  <div id="playerDeck">
+    <h2>玩家</h2>
+    <p>籌碼: <span id="playerChips">300</span></p>
+    <p>下注金額: 
+      <select id="betAmount">
+        <option value="10">10</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </p>
+    <button onclick="startGame()">開始遊戲</button>
+    <button onclick="playerHit()">叫牌</button>
+    <button onclick="playerStand()">停牌</button>
+  </div>
+  <div id="computerDeck">
+    <h2>電腦</h2>
+    <p>手牌點數: <span id="computerPoints"></span></p>
+    <button onclick="computerTurn()">電腦回合</button>
+  </div>
+  <p id="result"></p>
+
+  <script>
+    // JavaScript 代碼
+    var playerChips = 300; // 玩家的籌碼
+    var playerPoints = 0; // 玩家手牌點數
+    var computerPoints = 0; // 電腦手牌點數
+
+    // 更新玩家的籌碼數量
+    function updateChips(amount) {
+      playerChips += amount;
+      document.getElementById('playerChips').innerText = playerChips;
+    }
+
+    // 開始遊戲
+    function startGame() {
+      var betAmount = parseInt(document.getElementById('betAmount').value);
+      if (betAmount > playerChips || betAmount < 10 || betAmount > 200) {
+        alert('下注金額無效');
+        return;
+      }
+      playerChips -= betAmount;
+      document.getElementById('playerChips').innerText = playerChips;
+      // 開始發牌...
+      // 更新遊戲介面...
+    }
+
+    // 玩家叫牌
+    function playerHit() {
+      // 抽一張牌...
+      // 更新玩家手牌和點數...
+      // 判斷是否爆牌...
+      // 更新遊戲介面...
+    }
+
+    // 玩家停牌
+    function playerStand() {
+      // 轉換到電腦回合...
+      // 更新遊戲介面...
+    }
+
+    // 電腦回合
+    function computerTurn() {
+      // 電腦根據規則決定是否叫牌...
+      // 更新電腦手牌和點數...
+      // 判斷是否爆牌...
+      // 比較雙方手牌點數...
+      // 更新遊戲結果...
+      // 更新玩家的籌碼數量...
+      // 提供重新開始遊戲的選項...
+    }
+  </script>
+</body>
+</html>
